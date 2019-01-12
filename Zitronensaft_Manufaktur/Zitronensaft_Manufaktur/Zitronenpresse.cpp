@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Zitronenpresse.h"
+#include "LessJuiceException.h"
 #include <iostream>
 
 
@@ -50,10 +51,12 @@ void Zitronenpresse::Press(vector <Zitrone*> zitronen)
 			cout << "Erledigt" << endl;
 		}
 		else {
-			throw 
+			throw LessJuiceExeption();
 		}
 	}
 	catch{
+
+
 
 	}
 }
