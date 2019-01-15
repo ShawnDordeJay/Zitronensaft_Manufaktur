@@ -11,11 +11,11 @@
 #include <time.h>
 
 using namespace std;
-class store
+class Store
 {
 public:
-	store();
-	~store();
+	Store();
+	~Store();
 
 	vector <Zitrone*> lager;
 	void menu();

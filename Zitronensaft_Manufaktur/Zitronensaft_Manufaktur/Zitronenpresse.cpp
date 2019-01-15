@@ -4,8 +4,9 @@
 #include <iostream>
 
 
-Zitronenpresse::Zitronenpresse()
+Zitronenpresse::Zitronenpresse(Store *store)
 {
+	this->store = store;
 }
 
 
@@ -13,18 +14,18 @@ Zitronenpresse::~Zitronenpresse()
 {
 }
 
-Zitronenpresse * Zitronenpresse::getInstance()
+Zitronenpresse * Zitronenpresse::getInstance(Store *store)
 {
 
 	if (INSTANCE == 0) {
 
-		INSTANCE = new Zitronenpresse();
+		INSTANCE = new Zitronenpresse(store);
 	}
 
 	return INSTANCE;
 }
 
-void Zitronenpresse::Press(vector <Zitrone*> zitronen)
+void Zitronenpresse::Press(Store* store)
 {
 	int stk, gesamtml = 0;
 
@@ -33,7 +34,7 @@ void Zitronenpresse::Press(vector <Zitrone*> zitronen)
 
 	for (unsigned int i = 0; i < stk; i++) {
 
-		gesamtml += zitronen[i]->getML;
+		gesamtml += store->lager[i]->getML();
 
 	}
 
@@ -43,15 +44,15 @@ void Zitronenpresse::Press(vector <Zitrone*> zitronen)
 
 			for (unsigned int i = 0; i < stk; i++) {
 				this->PRESSVORGAENGE++;
-				this->SAFTVOLUMEN += zitronen[i]->getML;
+				this->SAFTVOLUMEN += store->lager[i]->getML();
 			}
 
-			zitronen.erase(zitronen.begin(), zitronen.begin() + stk);
+			store->lager.erase(store->lager.begin(), store->lager.begin() + stk);
 
 			cout << "Erledigt" << endl;
 		}
 		else {
-			throw LessJuiceExeption();
+			throw LessJuiceExeption(Store* store);
 		}
 	}
 	catch{

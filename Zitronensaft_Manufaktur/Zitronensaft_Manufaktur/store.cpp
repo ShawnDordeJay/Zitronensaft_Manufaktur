@@ -1,17 +1,17 @@
 #include "pch.h"
-#include "store.h"
+#include "Store.h"
 
 
-store::store()
+Store::Store()
 {
 }
 
 
-store::~store()
+Store::~Store()
 {
 }
 
-void store::menu()
+void Store::menu()
 {
 
 	char todo = 'J';
@@ -33,7 +33,7 @@ void store::menu()
 			cin >> todo;
 
 			if (todo == 'P' || todo == 'p') {
-				Zitronenpresse *Presse = Zitronenpresse::getInstance();
+				Zitronenpresse *Presse = Zitronenpresse::getInstance(Store* store);
 				return;
 			}
 
@@ -45,7 +45,7 @@ void store::menu()
 	}
 }
 
-void store::showCart()
+void Store::showCart()
 {
 	cout << "Folgendes ist im Einkaufswagen:" << endl;
 	
@@ -56,7 +56,7 @@ void store::showCart()
 	}
 }
 
-void store::getZitronen()
+void Store::getZitronen()
 {
 	srand(time(NULL));
 
