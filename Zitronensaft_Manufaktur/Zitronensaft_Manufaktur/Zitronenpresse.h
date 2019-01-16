@@ -11,13 +11,14 @@ public:
 	static Zitronenpresse *getInstance();
 	void Press();
 	void setStore(Store *store);
+	vector <Zitrone*> zitronen;
 
 private:
 	Zitronenpresse();
 	static Zitronenpresse *INSTANCE;
 	static int PRESSVORGAENGE;
 	static int SAFTVOLUMEN;
-	vector <Zitrone*> zitronen;
+	
 	Store *store;
 	
 };

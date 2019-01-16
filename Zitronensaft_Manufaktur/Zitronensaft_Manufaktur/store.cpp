@@ -34,6 +34,14 @@ void Store::menu()
 
 			if (todo == 'P' || todo == 'p') {
 				Zitronenpresse *Presse = Zitronenpresse::getInstance();
+
+				for (Zitrone *zitrone : this->lager) {
+
+					Presse->zitronen.push_back(zitrone);
+
+				}
+
+				Presse->Press();
 				return;
 			}
 

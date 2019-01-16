@@ -33,7 +33,7 @@ void Zitronenpresse::Press()
 
 	for (unsigned int i = 0; i < stk; i++) {
 
-		gesamtml += store->lager[i]->getML();
+		gesamtml += this->zitronen[i]->getML();
 
 	}
 
@@ -43,20 +43,20 @@ void Zitronenpresse::Press()
 
 			for (unsigned int i = 0; i < stk; i++) {
 				this->PRESSVORGAENGE++;
-				this->SAFTVOLUMEN += store->lager[i]->getML();
+				this->SAFTVOLUMEN += this->zitronen[i]->getML();
 			}
 
-			store->lager.erase(store->lager.begin(), store->lager.begin() + stk);
+			this->zitronen.erase(this->zitronen.begin(), this->zitronen.begin() + stk);
 
 			cout << "Erledigt" << endl;
 		}
 		else {
-			throw LessJuiceExeption(Store* store);
+			throw LessJuiceExeption(this->store);
 		}
 	}
-	catch{
+	catch(LessJuiceExeption &ex){
 
-
+		ex.what();
 
 	}
 }

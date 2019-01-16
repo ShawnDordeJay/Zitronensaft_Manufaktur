@@ -34,8 +34,8 @@ public:
 		if (selection == 'P' || selection == 'Z') {
 			switch (selection) {
 			case 'P': {
-				Zitronenpresse *presse = Zitronenpresse::getInstance(this->store);
-				presse->Press(this->store);
+				Zitronenpresse *presse = Zitronenpresse::getInstance();
+				presse->Press();
 			} break;
 			case 'Z': {
 				this->store->menu();
