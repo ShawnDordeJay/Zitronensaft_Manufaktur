@@ -4,9 +4,8 @@
 #include <iostream>
 
 
-Zitronenpresse::Zitronenpresse(Store *store)
+Zitronenpresse::Zitronenpresse()
 {
-	this->store = store;
 }
 
 
@@ -14,18 +13,18 @@ Zitronenpresse::~Zitronenpresse()
 {
 }
 
-Zitronenpresse * Zitronenpresse::getInstance(Store *store)
+Zitronenpresse * Zitronenpresse::getInstance()
 {
 
 	if (INSTANCE == 0) {
 
-		INSTANCE = new Zitronenpresse(store);
+		INSTANCE = new Zitronenpresse();
 	}
 
 	return INSTANCE;
 }
 
-void Zitronenpresse::Press(Store* store)
+void Zitronenpresse::Press()
 {
 	int stk, gesamtml = 0;
 
@@ -60,6 +59,11 @@ void Zitronenpresse::Press(Store* store)
 
 
 	}
+}
+
+void Zitronenpresse::setStore(Store * store)
+{
+	this->store = store;
 }
 
 Zitronenpresse *Zitronenpresse::INSTANCE = 0;

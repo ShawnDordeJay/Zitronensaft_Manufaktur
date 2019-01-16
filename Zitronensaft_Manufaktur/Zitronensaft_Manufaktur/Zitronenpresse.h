@@ -8,14 +8,16 @@ class Zitronenpresse
 public:
 	
 	~Zitronenpresse();
-	static Zitronenpresse *getInstance(Store *store);
-	void Press(Store* store);
+	static Zitronenpresse *getInstance();
+	void Press();
+	void setStore(Store *store);
 
 private:
-	Zitronenpresse(Store *store);
+	Zitronenpresse();
 	static Zitronenpresse *INSTANCE;
 	static int PRESSVORGAENGE;
 	static int SAFTVOLUMEN;
+	vector <Zitrone*> zitronen;
 	Store *store;
 	
 };

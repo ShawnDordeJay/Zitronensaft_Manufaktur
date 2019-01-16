@@ -33,7 +33,7 @@ void Store::menu()
 			cin >> todo;
 
 			if (todo == 'P' || todo == 'p') {
-				Zitronenpresse *Presse = Zitronenpresse::getInstance(Store* store);
+				Zitronenpresse *Presse = Zitronenpresse::getInstance();
 				return;
 			}
 

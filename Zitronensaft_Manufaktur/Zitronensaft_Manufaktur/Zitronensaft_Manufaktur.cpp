@@ -9,11 +9,13 @@
 int main()
 {
 	//Shop-Objekt erstellen
-	store *Zitronenfachhandel = new store();
-	Zitronenfachhandel->menu();
-
+	Store *Zitronenfachhandel = new Store();
+	
 	Zitronenpresse *Presse = Zitronenpresse::getInstance();
-	Presse->Press(Zitronenfachhandel->lager);
+	Presse->setStore(Zitronenfachhandel);
+
+	Zitronenfachhandel->menu();
+	Presse->Press();
 
 
 }
