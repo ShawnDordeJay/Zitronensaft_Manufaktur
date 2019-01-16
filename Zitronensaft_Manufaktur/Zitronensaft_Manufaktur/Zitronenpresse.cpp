@@ -31,7 +31,7 @@ void Zitronenpresse::Press()
 	cout << "Wie viele Zitronen moechten Sie pressen?" << endl;
 	cin >> stk;
 
-	while (stk < this->zitronen.size()) {
+	while (stk > this->zitronen.size()) {
 		cout << "Es sind nur " << this->zitronen.size() << " vorhanden. Bitte neu eingeben: " << endl;
 		cin >> stk;
 	}
