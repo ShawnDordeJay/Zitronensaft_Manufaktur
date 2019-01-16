@@ -27,24 +27,25 @@ void Store::menu()
 		switch (selector) {
 		case 1: {
 			
-			this->getZitronen();
-			this->showCart();
+			this->getZitronen(); //random zitronen erstellen
+			this->showCart(); //Warenkorb print
 
 			cout << "Wollen Sie weiter einkaufen (J) oder die Zitronen Pressen (P): ";
 			cin >> todo;
 
 			if (todo == 'P' || todo == 'p') {
 				Zitronenpresse *Presse = Zitronenpresse::getInstance();
-
+#
+				//zitronen in die zitronenpresse übertragen
 				for (Zitrone *zitrone : this->lager) {
 
 					Presse->zitronen.push_back(zitrone);
 
 				}
 
-				lager.clear();
+				lager.clear(); //lager leeren
 
-				Presse->Press();
+				Presse->Press(); //name ist programm
 				return;
 			}
 

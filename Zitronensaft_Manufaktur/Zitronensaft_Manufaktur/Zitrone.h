@@ -5,8 +5,8 @@ class Zitrone
 public:
 	Zitrone();
 	~Zitrone();
-	int getSize();
-	int getML();
+	int getSize(); //name ist programm
+	int getML(); //name ist programm
 
 protected:
 	int size;

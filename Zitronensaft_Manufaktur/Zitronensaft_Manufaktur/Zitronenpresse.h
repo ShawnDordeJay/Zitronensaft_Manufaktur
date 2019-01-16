@@ -9,8 +9,8 @@ class Zitronenpresse
 public:
 	
 	~Zitronenpresse();
-	static Zitronenpresse *getInstance();
-	void Press();
+	static Zitronenpresse *getInstance(); //singleton
+	void Press(); //pressvorgang
 	void setStore(Store *store);
 	vector <Zitrone*> zitronen;
 

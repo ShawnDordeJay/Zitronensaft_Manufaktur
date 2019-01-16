@@ -30,6 +30,7 @@ public:
 			}
 		} while ((selection != 'P') && (selection != 'Z'));
 
+		//je nach auswahl entweder pressen oder neue kaufen
 		
 		if (selection == 'P' || selection == 'Z') {
 			switch (selection) {

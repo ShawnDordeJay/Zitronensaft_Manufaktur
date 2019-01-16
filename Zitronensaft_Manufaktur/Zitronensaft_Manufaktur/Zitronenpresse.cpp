@@ -31,11 +31,13 @@ void Zitronenpresse::Press()
 	cout << "Wie viele Zitronen moechten Sie pressen?" << endl;
 	cin >> stk;
 
+	//check ob eingegebene stk zahl größer als die zitronenanzahl
 	while (stk > this->zitronen.size()) {
 		cout << "Es sind nur " << this->zitronen.size() << " vorhanden. Bitte neu eingeben: " << endl;
 		cin >> stk;
 	}
 
+	//check ob 150 ml erreicht werden
 	for (unsigned int i = 0; i < stk; i++) {
 
 		gesamtml += this->zitronen[i]->getML();
