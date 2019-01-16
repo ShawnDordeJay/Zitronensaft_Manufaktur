@@ -25,10 +25,10 @@ public:
 			cin >> selection;
 			selection = toupper(selection); //selection in grossbuchstaben, leichter zum arbeiten danach
 			
-			if ((selection != 'P') || (selection != 'Z')) {
+			if ((selection != 'P') && (selection != 'Z')) {
 				cout << "nice try, try again" << endl;
 			}
-		} while (selection != ('P' || 'p') || selection != ('Z' || 'z'));
+		} while ((selection != 'P') && (selection != 'Z'));
 
 		
 		if (selection == 'P' || selection == 'Z') {
@@ -36,9 +36,11 @@ public:
 			case 'P': {
 				Zitronenpresse *presse = Zitronenpresse::getInstance();
 				presse->Press();
+				return "";
 			} break;
 			case 'Z': {
 				this->store->menu();
+				return "";
 			}break;
 			}
 		}

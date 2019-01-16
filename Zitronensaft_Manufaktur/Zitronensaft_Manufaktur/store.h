@@ -5,7 +5,6 @@
 #include "Zitrone3.h"
 #include "Zitrone4.h"
 #include "Zitrone5.h"
-#include "Zitronenpresse.h"
 #include <vector>
 #include <iostream>
 #include <time.h>

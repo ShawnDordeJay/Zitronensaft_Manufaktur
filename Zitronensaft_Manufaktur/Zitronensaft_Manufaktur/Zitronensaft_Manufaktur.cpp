@@ -15,7 +15,6 @@ int main()
 	Presse->setStore(Zitronenfachhandel);
 
 	Zitronenfachhandel->menu();
-	Presse->Press();
 
 
 }

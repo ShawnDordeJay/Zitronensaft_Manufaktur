@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Zitrone.h"
+#include "store.h"
 
 using namespace std;
 class Zitronenpresse

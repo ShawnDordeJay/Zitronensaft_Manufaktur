@@ -31,6 +31,11 @@ void Zitronenpresse::Press()
 	cout << "Wie viele Zitronen moechten Sie pressen?" << endl;
 	cin >> stk;
 
+	while (stk < this->zitronen.size()) {
+		cout << "Es sind nur " << this->zitronen.size() << " vorhanden. Bitte neu eingeben: " << endl;
+		cin >> stk;
+	}
+
 	for (unsigned int i = 0; i < stk; i++) {
 
 		gesamtml += this->zitronen[i]->getML();

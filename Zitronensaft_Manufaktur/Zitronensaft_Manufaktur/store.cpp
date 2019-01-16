@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Store.h"
+#include "Zitronenpresse.h"
 
 
 Store::Store()
@@ -41,6 +42,8 @@ void Store::menu()
 
 				}
 
+				lager.clear();
+
 				Presse->Press();
 				return;
 			}
@@ -59,7 +62,7 @@ void Store::showCart()
 	
 	for (Zitrone* item : this->lager) {
 
-		cout << "Zitrone Groesse " << item->getSize << " mit Saftinhalt: " << item->getML << endl;
+		cout << "Zitrone Groesse " << item->getSize() << " mit Saftinhalt: " << item->getML() << endl;
 
 	}
 }
@@ -73,23 +76,23 @@ void Store::getZitronen()
 		int size = rand() % 5;
 
 		switch (size) {
-		case 1: {
+		case 0: {
 			Zitrone* neue = new Zitrone1();
 			this->lager.push_back(neue);
 		}break;
-		case 2: {
+		case 1: {
 			Zitrone* neue = new Zitrone2();
 			this->lager.push_back(neue);
 		}break;
-		case 3: {
+		case 2: {
 			Zitrone* neue = new Zitrone3();
 			this->lager.push_back(neue);
 		}break;
-		case 4: {
+		case 3: {
 			Zitrone* neue = new Zitrone4();
 			this->lager.push_back(neue);
 		}break;
-		case 5: {
+		case 4: {
 			Zitrone* neue = new Zitrone5();
 			this->lager.push_back(neue);
 		}break;
