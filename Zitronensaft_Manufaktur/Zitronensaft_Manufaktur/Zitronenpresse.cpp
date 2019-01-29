@@ -58,14 +58,44 @@ void Zitronenpresse::Press()
 			cout << "Erledigt" << endl;
 		}
 		else {
-			throw LessJuiceExeption(this->store);
+			throw LessJuiceExeption();
 		}
 	}
 	catch(LessJuiceExeption &ex){
 
-		ex.what();
+		cout << ex.what() << endl;
+
+		char selection;
+		cout << "Wenn Sie noch mehr vom Lager pressen wollen, druecken Sie P. ";
+		cout << "Wenn Sie mehr Zitronen kaufen wollen, druecken Sie Z.";
+
+		do {
+			cin >> selection;
+			selection = toupper(selection); //selection in grossbuchstaben, leichter zum arbeiten danach
+
+			if ((selection != 'P') && (selection != 'Z')) {
+				cout << "nice try, try again" << endl;
+			}
+		} while ((selection != 'P') && (selection != 'Z'));
+
+		//je nach auswahl entweder pressen oder neue kaufen
+
+		if (selection == 'P' || selection == 'Z') {
+			switch (selection) {
+			case 'P': {
+				Zitronenpresse *presse = Zitronenpresse::getInstance();
+				presse->Press();
+				return;
+			} break;
+			case 'Z': {
+				this->store->menu();
+				return;
+			}break;
+			}
+		}
 
 	}
+	return;
 }
 
 void Zitronenpresse::setStore(Store * store)
